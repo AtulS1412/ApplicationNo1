@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Home Page</h1>
+<!-- Button to trigger the JavaScript function -->
+<button type="button" class="btn btn-primary" onclick="redirectToSecondApp()">Go to Second App</button>
+<script>
+    function redirectToSecondApp() {
+        // Send an AJAX request to the controller action
+        fetch('/Home/RedirectToSecondApp')
+            .then(response => response.json())
+            .then(data => {
+                if (data.url) {
+                    // Open the URL in a new tab
+                    window.open(data.url, '_blank');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>

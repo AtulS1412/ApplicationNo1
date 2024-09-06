@@ -1,0 +1,15 @@
+﻿  @model FirstApplication.Models.LoginModel
+
+  <form asp-action="Index" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+      <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" name="Username" required />
+      </div>
+      <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="Password" required />
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Login</button>
+  </form>
